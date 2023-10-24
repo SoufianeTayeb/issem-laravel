@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/test',function(){
-    return view('test');
+Route::get('/test/{nombre}',function($nombre){
+    return view('test',['nombre'=>$nombre]);
 });
 Route::get('/', function () {
     return view('welcome');
