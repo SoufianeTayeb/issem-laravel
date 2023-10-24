@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\user_controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/test',function(){
+    return view('test');
+});
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/home/{id}/{naem}', function ($id, $name) {
+//     $data = ["id" => $id, "name" => $name];
+//     return view('home',['data'=> $data]);})->where('id','[0-9]+');
+Route ::get('/home/{id}/{name}',[user_controller::class,'index']);
