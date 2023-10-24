@@ -10,12 +10,10 @@
 <body style="background-color: black; color:white; text-align:center;">
     <h1>test Page</h1>
     <h3>Nombre retourné est :
-        @if ($nombre > 0)
-            {{ $nombre }} est suppérieur à 0
-        @elseif ($nombre < 0)
-            {{ $nombre }} est inférieur à 0
+        @if (isset($nombre))
+            {{ $nombre }}
         @else
-            Le Nombre est nulle
+            y'a pas de nombre à afficher
         @endif
     </h3>
 </body>
